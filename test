@@ -6,7 +6,7 @@ export default function POD ({date}) {
   const [photo, setPhoto] = useState([]);
 
   var today = new Date();
-  var todayy = today.getFullYear() + "-" + (today.getMonth()+1) + "-" + today.getDate();
+  var todayy = (today.getMonth() + 1) + "-" + today.getDate() + "-" + today.getFullYear();
   const [calDate, setDate] = useState(todayy);
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export default function POD ({date}) {
       <div className="calendar">
         <form>
           <label for="date">Date here</label>
-          <input type="date" id="date" type="date" onChange={changeDate} value={date} />
+          <input type="date" date={date} onChange={changeDate} value={date} />
         </form>
 
 
@@ -50,3 +50,9 @@ export default function POD ({date}) {
 
 //value = {date} on input form
 // make anohter useState to change date
+
+// what is the {date} parameter in Krystal's imagecontainer function referencing?
+
+// HDQ2BExMXHghzFIk2iemzrEraAAtwQnUbUxuBeKq
+
+// axios.get(`https://api.nasa.gov/planetary/apod?api_key=AYJud2VBhakaejBXXGKVgAhQ8SHAZaKUHfOLlX28&date=${calDate}`)
